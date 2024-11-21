@@ -1,0 +1,133 @@
+.main{
+    margin-left: 25vw;
+    margin-right: 10px;
+    margin-top: 5.5rem;
+}
+
+.main h1{
+    font-size: xx-large;
+}
+
+.main .article1 .cardContainer{
+    display: flex;
+    width: 100%;
+    gap: 30px;
+    align-items: center;
+}
+
+.main .article1 .cardContainer div{
+    width: 300px;
+    height: 150px;
+    background-color: #3a5341;
+    padding: 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.main .article1 div span img{
+    width: 70px;
+    height: 70px;
+}
+
+.main table{
+    width: 90%;
+    table-layout: fixed;
+    border-radius: 30px;
+    border-collapse: collapse;
+    border: 1px solid transparent;
+}
+
+.main th{
+    text-align: left;
+    border-bottom: 3px solid #04210c;
+    background-color: #3a5341;
+    padding: 15px;
+}
+
+.main td{
+    padding: 15px;
+    text-align: left;
+    border-bottom: 3px solid #04210c;
+    background-color: #3a5341;
+}
+
+.main .article5 .cardContainer2{
+    display: flex;
+    width: 100%;
+    gap: 30px;
+    align-items: center;
+}
+
+.main .article5 .cardContainer2 div{
+    width: 300px;
+    height: 150px;
+    background-color: #3a5341;
+    padding: 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.main .article5 .cardContainer2 div span img{
+    width: 70px;
+    height: 70px;
+}
+
+.main .article5 .span1{
+    display: flex;
+    gap: 10px;
+}
+
+.main .article5 .span1 p{
+    background-color: #3a5341;
+    padding: 5px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    width: fit-content;
+}
+
+.main .article6 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 20px;
+    row-gap: 10px;
+}
+
+.main .article6 div{
+    width: 350px;
+    height: 200px;
+    background-color: #3a5341;
+    padding: 5px;
+    border-radius: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: start;
+    /* align-items: start; */
+    gap: 10px;
+}
+
+.main .article6 div span{
+    height: 200px;
+    width: 200px;
+    font-size: small;
+}
+
+.main .article6 div img {
+    padding: 20px 5px;
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+}
+
+.main .article6 div span .spanBtn{
+    display: flex;
+    gap: 10px;
+    padding-top: 5px;
+}
+
+.main .article6 div span .spanBtn button{
+    width: fit-content;
+    height: fit-content;
+    cursor: pointer;
+}

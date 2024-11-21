@@ -1,0 +1,106 @@
+.main{
+    margin-left: 25vw;
+    margin-right: 10px;
+    margin-top: 5.5rem;
+}
+
+.main h1{
+    font-size: xx-large;
+}
+
+.main .span1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main .span1 input{
+    min-width: 15rem;
+    height: 40px;
+    background-color: #3a5341;
+    color: white;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    padding: 5px 10px;
+    outline: none;
+}
+
+.main .span2{
+    display: flex;
+    gap: 30px;
+}
+
+.main .article1 .cardcontainer{
+    margin-top: 2rem;
+    z-index: -2;
+}
+
+.main .article1 .span3{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.main .article1 .card{
+    margin: 20px;
+    border: 1px solid transparent;
+    padding: 20px;
+    cursor: pointer;
+    background: linear-gradient(180deg, #496351 0%, #1c4b29 50%, #04210c 100%);
+    border-radius: 30px
+}
+
+.main .article1 .cardimg{
+    width: 13rem;
+    margin-bottom: 1rem;
+}
+
+.main .article1 button{
+    background-color: #3a5341;
+    padding: 5px 30px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.main .article2 span{
+    display: flex;
+    gap: 10rem;
+}
+
+.main .article2 span nav div{
+    width: 200px;
+    height: 200px;
+}
+
+.main .article2 span nav{
+    background: linear-gradient(180deg, #496351 0%, #1c4b29 50%, #04210c 100%);
+    border-radius: 30px;
+    padding: 20px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.main .article2 table{
+    width: 90%;
+    table-layout: fixed;
+    border-radius: 30px;
+    border-collapse: collapse;
+    border: 1px solid transparent;
+}
+
+.main .article2 table th{
+    text-align: left;
+    border-bottom: 3px solid #04210c;
+    background-color: #3a5341;
+    padding: 15px;
+}
+
+.main .article2 table td{
+    padding: 15px;
+    text-align: left;
+    border-bottom: 3px solid #04210c;
+    background-color: #3a5341;
+}

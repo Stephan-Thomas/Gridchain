@@ -1,0 +1,154 @@
+section .article1{
+    margin-top: 20px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 50px;
+}
+
+section .article1 span{
+    display: flex;
+    gap: 10rem;
+}
+
+section .article1 .circle{
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 70%, #04210c 10%);
+    border-radius: 50%;
+    position: absolute;
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 100px 50px rgba(255, 255, 255, 0.2);
+    filter: blur(20px);
+    z-index: -1;
+    border: 1px solid ;
+}
+
+section .article1 h1{
+    font-weight: bold;
+    font-size: xx-large;
+    text-transform: capitalize;
+}
+
+section .article2 ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #103834;
+    height: 30px;
+    width: auto;
+    margin-top: 8rem;
+}
+
+section .article3{
+    text-align: center;
+}
+
+section .article3 h1{
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+section .article3 span{
+    display: flex;
+    justify-content: space-around;
+    margin: 30px 0 0 30px;
+}
+
+section .article3 p{
+    padding: 15px 20px;
+    background: linear-gradient(90deg, #608069 0%, #1c4b29 50%, #04210c 100%);
+    border-radius: 8px;
+    width: 25rem;
+    font-weight: bold;
+}
+
+section .article3 div img{
+    width: 35rem;
+    height: 250px;
+    border-radius: 20px;
+}
+
+section .article4{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+section .article4 span{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    width: 700px;
+}
+
+section .article4 span div{
+    padding: 15px;
+    border-radius: 10px;
+    background: linear-gradient(180deg, #608069 0%, #04210c 100%);
+    color: white;
+    width: 300px;
+    height: 350px;
+    line-height: 1.3rem;
+}
+
+section .article4 span div img{
+    width: 50px;
+    height: 50px;
+    background-color: grey;
+    border-radius: 50%;
+    margin-left: 15rem;
+}
+
+section .article4 span .down{
+    transform: translateY(60px);
+}
+
+section .article4 span div ul li{
+    list-style: none;
+}
+
+section .article4 h1{
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+section .article5 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 100px 0;
+}
+
+section .article5 div{
+    padding: 30px 40px 10px 40px;
+    border-radius: 10px;
+    background: linear-gradient(270deg, #608069 0%, #1c4b29 50%, #04210c 100%);
+    color: white;
+    width: 700px;
+    height: 350px;
+    line-height: 1.3rem;
+}
+
+section .article5 div img{
+    width: 100px;
+    height: 100px;
+    background-color: grey;
+    border-radius: 50%;
+    margin-left: 30rem;
+}
+
+section .article5 div p{
+    width: 600px;
+}
+
+section .article5 h1{
+    font-weight: bold;
+    font-size: xx-large;
+}

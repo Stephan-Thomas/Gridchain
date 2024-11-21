@@ -1,0 +1,39 @@
+.sidebar{
+    width: 20vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background: linear-gradient(180deg, #496351 0%, #1c4b29 50%, #04210c 100%);
+    position: fixed;
+    top: 4.4vw;
+}
+
+.sidebar hr{
+    width: 80%;
+}
+
+.sidebar a{
+    padding: 10px 50px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.sidebar a:hover{
+    background: linear-gradient(90deg, #608069 0%, #1c4b29 50%, #04210c 100%);
+} 
+.sidebar .userImage{
+    border-radius: 50%;
+    color: white;
+    background-color: #04210c;
+    padding: 20px 25px;
+    font-size: xx-large;
+    margin-bottom: 0;
+}
+
+.sidebar p{
+    padding: 0;
+    margin: 0;
+}

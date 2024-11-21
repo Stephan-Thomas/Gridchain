@@ -1,0 +1,17 @@
+.topbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, #3a5341 0%, #1c4b29 50%, #04210c 100%);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 0 50px;
+    height: 4.4vw;
+}
+
+.topbar span{
+    display: flex;
+    gap: 30px;
+    padding: 0 80px;
+}

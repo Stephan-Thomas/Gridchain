@@ -1,0 +1,39 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 50px;
+}
+
+.navbar a{
+    color: white;
+    text-decoration: none;
+}
+
+.navbar span{
+    display: flex;
+    gap: 50px;
+}
+
+.navbar div{
+    display: flex;
+    gap: 10px;
+    border: 0.1px solid #103834;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.navbar div .signup{
+    background-color: #103834;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+.navbar div .login{
+    background-color: white;
+    color: #103834;
+    padding: 10px 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
