@@ -45,16 +45,19 @@ section .article2 ul{
 
 section .article3{
     text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 section .article3 h1{
     font-size: xx-large;
     font-weight: bold;
+    margin-bottom: 5rem;
 }
 
 section .article3 span{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     margin: 30px 0 0 30px;
 }
 
@@ -77,7 +80,6 @@ section .article4{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 50px;
 }
 
 section .article4 span{
@@ -88,13 +90,18 @@ section .article4 span{
 }
 
 section .article4 span div{
-    padding: 15px;
+    padding: 50px 25px;
     border-radius: 10px;
     background: linear-gradient(180deg, #608069 0%, #04210c 100%);
     color: white;
     width: 300px;
-    height: 350px;
+    height: fit-content;
     line-height: 1.3rem;
+}
+
+section .article4 span div h1{
+    margin: 0 0 30px 0;
+
 }
 
 section .article4 span div img{
@@ -109,13 +116,20 @@ section .article4 span .down{
     transform: translateY(60px);
 }
 
+section .article4 span div ul{
+    margin: 0;
+    padding: 0;
+}
+
 section .article4 span div ul li{
     list-style: none;
+    margin: 0;
 }
 
 section .article4 h1{
     font-weight: bold;
     font-size: xx-large;
+    margin-bottom: 5rem;
 }
 
 section .article5 {
@@ -127,13 +141,15 @@ section .article5 {
 }
 
 section .article5 div{
-    padding: 30px 40px 10px 40px;
-    border-radius: 10px;
+    margin-top: 5rem;
+    padding: 5rem 5rem 3.5rem 5rem;
+    border-radius: 30px;
     background: linear-gradient(270deg, #608069 0%, #1c4b29 50%, #04210c 100%);
     color: white;
-    width: 700px;
-    height: 350px;
+    width: 45rem;
+    height: 18rem;
     line-height: 1.3rem;
+    text-align: left;
 }
 
 section .article5 div img{
@@ -141,11 +157,13 @@ section .article5 div img{
     height: 100px;
     background-color: grey;
     border-radius: 50%;
-    margin-left: 30rem;
+    margin-top: 2rem;
+    object-fit: cover;
 }
 
-section .article5 div p{
-    width: 600px;
+section .article5 .card{
+    display: flex;
+    justify-content: space-between;
 }
 
 section .article5 h1{

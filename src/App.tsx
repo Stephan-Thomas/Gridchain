@@ -7,6 +7,7 @@ import { Market } from "./pages/Market";
 import { Admin } from "./pages/Admin";
 import { Reward } from "./pages/Reward";
 import { Signin } from "./pages/Signin";
+import { Login } from "./pages/Login";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Route path="/rewards" element={<Reward />} />
       <Route path="/admin" element={<Admin />} />
       <Route path="/signin" element={<Signin />} />
+      <Route path="/login" element={<Login />} />
     </Routes>
   );
 }

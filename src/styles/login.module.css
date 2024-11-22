@@ -1,0 +1,89 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem;
+}
+
+.container .right{
+    background: linear-gradient(90deg, #2b3e30 0%, #1c4b29 50%, #04210c 100%);
+    width: fit-content;
+    height: auto;
+    padding: 20px;
+    border: 0.5px solid rgb(60, 60, 60);
+    border-radius: 10px;
+    margin-right: 18rem;
+}
+
+.container .right h1{
+    text-align: center;
+    font-size: xx-large;
+}
+
+.container .right form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.container .right form ul{
+    margin: 0;
+    padding: 0;
+}
+
+.container .right form ul li{
+    list-style: none;
+    padding: 5px;
+}
+
+.container .right form ul li label{
+    display: block;
+    padding-bottom: 5px;
+}
+
+.container .right form ul li input{
+    width: 25rem;
+    height: 2rem;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    outline: none;
+    background-color: #c3c3c3;
+}
+
+.container .right form ul li input::placeholder{
+    padding-left: 10px;
+    color: grey;
+}
+
+.container .right button {
+    display: block;
+    width: 80%;
+    background-color: lawngreen;
+    border-radius: 30px;
+}
+
+.container .right form span input{
+    accent-color: lawngreen;
+}
+
+.container .left{
+    height: 95%;
+    background-color: black;
+    padding: 20px 50px;
+    margin: 0;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .left img{
+    height: 400px;
+}
+
+.container .left button{
+    width: 5rem;
+}
