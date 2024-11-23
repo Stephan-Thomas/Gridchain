@@ -15,7 +15,7 @@ import styles from "../styles/overview.module.css";
 import { chartData } from "../data/fakeData";
 import { BuyModal } from "../components/modals/buyModal";
 import { SellModal } from "../components/modals/sellModal";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 ChartJS.register(
   CategoryScale,
@@ -28,47 +28,13 @@ ChartJS.register(
 );
 
 export function Overview() {
-  const [isBuyModalOpen, setIsBuyModalOpen] = useState(false); // State for BuyModal
-  const [isSellModalOpen, setIsSellModalOpen] = useState(false); // State for SellModal
-
-  const openBuyModal = () => {
-    setIsBuyModalOpen(true); // Open BuyModal
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const openModal = () => {
+    setIsModalOpen(true);
   };
-
-  const closeBuyModal = () => {
-    setIsBuyModalOpen(false); // Close BuyModal
+  const closeModal = () => {
+    setIsModalOpen(false);
   };
-
-  const openSellModal = () => {
-    setIsSellModalOpen(true); // Open SellModal
-  };
-
-  const closeSellModal = () => {
-    setIsSellModalOpen(false); // Close SellModal
-  };
-
-  // Close modal when clicking outside of it
-  useEffect(() => {
-    const handleOutsideClick = (event: MouseEvent) => {
-      const modalContainer = document.querySelector(
-        `.${styles.modalContainer}`
-      );
-      if (modalContainer && !modalContainer.contains(event.target as Node)) {
-        closeBuyModal(); // Close BuyModal
-        closeSellModal(); // Close SellModal
-      }
-    };
-
-    // Add event listener if modal is open
-    if (isBuyModalOpen || isSellModalOpen) {
-      document.addEventListener("click", handleOutsideClick);
-    }
-
-    // Cleanup the event listener
-    return () => {
-      document.removeEventListener("click", handleOutsideClick);
-    };
-  }, [isBuyModalOpen, isSellModalOpen]);
 
   return (
     <>
@@ -94,10 +60,10 @@ export function Overview() {
           <div className={styles.div1}>
             <h1>Trade Energy Here</h1>
             <span>
-              <button className={styles.sell} onClick={openSellModal}>
+              <button className={styles.sell} onClick={openModal}>
                 Sell Energy
               </button>
-              <button onClick={openBuyModal}>Buy Energy</button>
+              <button onClick={openModal}>Buy Energy</button>
             </span>
           </div>
           <div className={styles.div2}>
@@ -143,10 +109,8 @@ export function Overview() {
           </span>
           <Line data={chartData} />
         </article>
-        {isBuyModalOpen && (
-          <BuyModal onClose={closeBuyModal} energy={undefined} />
-        )}
-        {isSellModalOpen && <SellModal onClose={closeSellModal} />}
+        {/* {isModalOpen && <BuyModal onClose={closeModal} />} */}
+        {isModalOpen && <SellModal onClose={closeModal} />}
       </section>
     </>
   );
