@@ -1,3 +1,4 @@
+import React, { useEffect, useState } from "react";
 import { Doughnut } from "react-chartjs-2";
 import {
   Chart as ChartJS,
@@ -14,10 +15,8 @@ import { Topbar } from "../components/Topbar";
 import { Sidebar } from "../components/Sidebar";
 import styles from "../styles/market.module.css";
 import { doughnutData } from "../data/doughnut";
-import { CiFilter } from "react-icons/ci";
-import { useState } from "react";
+import { BuyModal } from "../components/modals/buyModal"; // Ensure BuyModal is imported
 
-// Register chart.js components
 ChartJS.register(
   CategoryScale,
   ArcElement,
@@ -44,6 +43,8 @@ export function Market() {
     { id: 5, type: "Solar", price: 0.18, country: "Nigeria", state: "Anambra" },
   ];
 
+  const [countries, setCountries] = useState<string[]>([]);
+  const [states, setStates] = useState<string[]>([]);
   const [filters, setFilters] = useState({
     search: "",
     energyType: "All",
@@ -51,9 +52,64 @@ export function Market() {
     state: "All",
     priceRange: "All",
   });
+  const [selectedEnergy, setSelectedEnergy] = useState<any>(null); // State to track the selected energy item
+  const [isModalOpen, setIsModalOpen] = useState(false); // Modal state
+
+  const priceRanges = ["0 ~ 0.1", "0.1 ~ 0.2", "0.2 ~ 0.3", "Above 0.3"];
+
+  useEffect(() => {
+    // Fetch all countries on component mount
+    const fetchCountries = async () => {
+      try {
+        const response = await fetch("https://restcountries.com/v3.1/all");
+        const data = await response.json();
+        const countryNames = data.map((country: any) => country.name.common);
+        setCountries(countryNames.sort()); // Sort alphabetically
+      } catch (error) {
+        console.error("Error fetching countries:", error);
+      }
+    };
+
+    fetchCountries();
+  }, []);
+
+  const handleCountryChange = async (country: string) => {
+    setFilters((prev) => ({
+      ...prev,
+      country,
+      state: "All", // Reset state when country changes
+    }));
+
+    // Fetch states for the selected country
+    if (country !== "All") {
+      try {
+        const response = await fetch(
+          `https://countriesnow.space/api/v0.1/countries/states`, // Example API
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ country }),
+          }
+        );
+        const data = await response.json();
+        setStates(data.data.states.map((state: any) => state.name));
+      } catch (error) {
+        console.error("Error fetching states:", error);
+        setStates([]); // Clear states on error
+      }
+    } else {
+      setStates([]);
+    }
+  };
 
   const handleFilterChange = (key: string, value: string) => {
-    setFilters((prev) => ({ ...prev, [key]: value }));
+    if (key === "country") {
+      handleCountryChange(value);
+    } else {
+      setFilters((prev) => ({ ...prev, [key]: value }));
+    }
   };
 
   const getPriceRange = (price: number) => {
@@ -86,6 +142,15 @@ export function Market() {
     );
   });
 
+  const openModal = (energyItem: any) => {
+    setSelectedEnergy(energyItem); // Set the selected energy item
+    setIsModalOpen(true); // Open modal
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <>
       <Topbar />
@@ -100,25 +165,12 @@ export function Market() {
             onChange={(e) => handleFilterChange("search", e.target.value)}
           />
         </span>
-        <article className={styles.article1}>
-          <span className={styles.span2}>
-            <p>
-              <CiFilter />
-            </p>
-            <button>All</button>
-            <button>Popular Trades</button>
-            <button>Price</button>
-            <button>Type of Energy</button>
-          </span>
-        </article>
         <article className={styles.article2}>
-          <div className={styles.filters}></div>
           <table>
             <tr>
               <th>
                 <select
                   name="energyType"
-                  id="energyType"
                   value={filters.energyType}
                   onChange={(e) =>
                     handleFilterChange("energyType", e.target.value)
@@ -133,50 +185,49 @@ export function Market() {
               </th>
               <th>
                 <select
-                  name="priceRange"
-                  id="priceRange"
-                  value={filters.priceRange}
-                  onChange={(e) =>
-                    handleFilterChange("priceRange", e.target.value)
-                  }
-                >
-                  <option value="All">Price Range</option>
-                  <option value="0 ~ 0.1">$0 ~ $0.1</option>
-                  <option value="0.1 ~ 0.2">$0.1 ~ $0.2</option>
-                  <option value="0.2 ~ 0.3">$0.2 ~ $0.3</option>
-                  <option value="Above 0.3">Above $0.3</option>
-                </select>
-              </th>
-              <th>
-                <select
                   name="country"
-                  id="country"
                   value={filters.country}
                   onChange={(e) =>
                     handleFilterChange("country", e.target.value)
                   }
                 >
                   <option value="All">Country</option>
-                  <option value="USA">USA</option>
-                  <option value="Canada">Canada</option>
-                  <option value="Germany">Germany</option>
-                  <option value="India">India</option>
-                  <option value="Nigeria">Nigeria</option>
+                  {countries.map((country) => (
+                    <option key={country} value={country}>
+                      {country}
+                    </option>
+                  ))}
                 </select>
               </th>
               <th>
                 <select
                   name="state"
-                  id="state"
                   value={filters.state}
                   onChange={(e) => handleFilterChange("state", e.target.value)}
+                  disabled={filters.country === "All"}
                 >
                   <option value="All">State</option>
-                  <option value="California">California</option>
-                  <option value="Ontario">Ontario</option>
-                  <option value="Bavaria">Bavaria</option>
-                  <option value="Maharashtra">Maharashtra</option>
-                  <option value="Anambra">Anambra</option>
+                  {states.map((state) => (
+                    <option key={state} value={state}>
+                      {state}
+                    </option>
+                  ))}
+                </select>
+              </th>
+              <th>
+                <select
+                  name="priceRange"
+                  value={filters.priceRange}
+                  onChange={(e) =>
+                    handleFilterChange("priceRange", e.target.value)
+                  }
+                >
+                  <option value="All">Price Range</option>
+                  {priceRanges.map((range) => (
+                    <option key={range} value={range}>
+                      {range}
+                    </option>
+                  ))}
                 </select>
               </th>
             </tr>
@@ -184,7 +235,11 @@ export function Market() {
           <div className={styles.results}>
             {filteredData.length > 0 ? (
               filteredData.map((item) => (
-                <div key={item.id} className={styles.card}>
+                <div
+                  key={item.id}
+                  className={styles.card}
+                  onClick={() => openModal(item)} // Trigger modal on card click
+                >
                   <h3>Energy Type: {item.type}</h3>
                   <p>Price: ${item.price.toFixed(2)} per KWh</p>
                   <p>Country: {item.country}</p>
@@ -192,7 +247,7 @@ export function Market() {
                 </div>
               ))
             ) : (
-              <p className={styles.noResults}>No Results Found</p>
+              <p>No Results Found</p>
             )}
           </div>
         </article>
@@ -258,6 +313,9 @@ export function Market() {
           </span>
         </article>
       </section>
+
+      {/* Modal Component */}
+      {isModalOpen && <BuyModal energy={selectedEnergy} onClose={closeModal} />}
     </>
   );
 }
