@@ -8,7 +8,6 @@ export function Sidebar() {
       <hr />
       <a href="/overview">Overview</a>
       <a href="/market">Market</a>
-      <a href="/wallet">Wallet</a>
       <a href="/rewards">Rewards</a>
       <a href="/help">Help</a>
       <hr />

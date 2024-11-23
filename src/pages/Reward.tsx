@@ -43,7 +43,7 @@ export function Reward() {
             <tr>
               <td>Complete first Purchase</td>
               <td>50 soon</td>
-              <td>complete</td>
+              <td>Complete</td>
             </tr>
             <tr>
               <td>Trade $2000 worth of energy</td>
@@ -68,17 +68,23 @@ export function Reward() {
             <tr>
               <td>10KWh Credits</td>
               <td>50 soon</td>
-              <td>Reedmem Now</td>
+              <td>
+                <button>Redeem Now</button>
+              </td>
             </tr>
             <tr>
               <td>Trade $2000 worth of energy</td>
               <td>100 soon</td>
-              <td>Reedmem Now</td>
+              <td>
+                <button>Redeem Now</button>
+              </td>
             </tr>
             <tr>
               <td>Exclusive Solar NFT</td>
               <td>150 soon</td>
-              <td>Reedmem Now</td>
+              <td>
+                <button>Redeem Now</button>
+              </td>
             </tr>
           </table>
         </article>

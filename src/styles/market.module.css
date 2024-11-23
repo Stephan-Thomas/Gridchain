@@ -61,17 +61,17 @@
     font-weight: bold;
 }
 
-.main .article2 span{
+.main .article3 span{
     display: flex;
     gap: 10rem;
 }
 
-.main .article2 span nav div{
+.main .article3 span nav div{
     width: 200px;
     height: 200px;
 }
 
-.main .article2 span nav{
+.main .article3 span nav{
     background: linear-gradient(180deg, #496351 0%, #1c4b29 50%, #04210c 100%);
     border-radius: 30px;
     padding: 20px;
@@ -87,18 +87,85 @@
     width: 90%;
     table-layout: fixed;
     border-radius: 30px;
+    border-collapse: separate;
+    border: 1px solid transparent;
+    margin-top: 20px;
+}
+
+.main .article2 th{
+    text-align: left;
+    border-bottom: 3px solid #04210c;
+    background-color: #3a5341;
+    padding: 15px;
+    text-align: center;
+}
+
+.main .article2 td{
+    padding: 15px;
+    text-align: left;
+    border-bottom: 3px solid #04210c;
+    background-color: #3a5341;
+}
+
+.main .article2 th select{
+    background-color: transparent;
+    border: none;
+    color: white;
+    outline: none;
+    width: 100%;
+}
+
+.main .article2 th select option{
+    background-color: #3a5341;
+    width: inherit;
+}
+
+.main .results{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.main .article2 .filters{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.main .article2 .card{
+    margin-top: 1rem;
+    padding: 1rem;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background-color: #496351;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.main .article2 .noResults{
+    text-align: center;
+    color: #999;
+    font-size: 1.2rem;
+}
+
+.main .article3 table{
+    width: 90%;
+    table-layout: fixed;
+    border-radius: 30px;
     border-collapse: collapse;
     border: 1px solid transparent;
 }
 
-.main .article2 table th{
+.main .article3 table th{
     text-align: left;
     border-bottom: 3px solid #04210c;
     background-color: #3a5341;
     padding: 15px;
 }
 
-.main .article2 table td{
+.main .article3 table td{
     padding: 15px;
     text-align: left;
     border-bottom: 3px solid #04210c;
