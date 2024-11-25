@@ -16,6 +16,7 @@ import { chartData } from "../data/fakeData";
 import { BuyModal } from "../components/modals/buyModal";
 import { SellModal } from "../components/modals/sellModal";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom"; // Add this for navigation
 
 ChartJS.register(
   CategoryScale,
@@ -29,6 +30,8 @@ ChartJS.register(
 
 export function Overview() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const navigate = useNavigate(); // Initialize the navigation function
+
   const openModal = () => {
     setIsModalOpen(true);
   };
@@ -36,9 +39,13 @@ export function Overview() {
     setIsModalOpen(false);
   };
 
+  const goToMarket = () => {
+    navigate("/market"); // Redirects to the market page
+  };
+
   return (
     <>
-      <Topbar />
+      <Topbar isAdmin={false} />
       <Sidebar />
       <section className={styles.main}>
         <h1>Welcome Xever,</h1>
@@ -63,7 +70,7 @@ export function Overview() {
               <button className={styles.sell} onClick={openModal}>
                 Sell Energy
               </button>
-              <button onClick={openModal}>Buy Energy</button>
+              <button onClick={goToMarket}>Buy Energy</button>
             </span>
           </div>
           <div className={styles.div2}>
@@ -109,7 +116,7 @@ export function Overview() {
           </span>
           <Line data={chartData} />
         </article>
-        {/* {isModalOpen && <BuyModal onClose={closeModal} />} */}
+        {/* {isModalOpen && <BuyModal onClose={closeModal} energy={undefined} />} */}
         {isModalOpen && <SellModal onClose={closeModal} />}
       </section>
     </>

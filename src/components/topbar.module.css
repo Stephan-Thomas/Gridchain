@@ -12,6 +12,63 @@
 
 .topbar span{
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 30px;
     padding: 0 80px;
 }
+
+.topbar span hr{
+    height: 30px;
+}
+
+.dropdownWrapper {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+  .dropdownWrapper .adminImg {
+    border-radius: 50%;
+    color: white;
+    background-color: #7cfc00;
+    padding: 5px 10px;
+  }
+  
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #3a5341;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    min-width: 200px;
+    padding: 10px 30px;
+    line-height: 2.5rem;
+  }
+  
+  .dropdown p,
+  .dropdown a,
+  .dropdown button {
+    margin: 5px 0;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .dropdown a:hover,
+  .dropdown button:hover {
+    text-decoration: none;
+  }
+  
+  .dropdown button {
+    display: block;
+    background-color: #5dba00;
+    padding: 10px;
+  }

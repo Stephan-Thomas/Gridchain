@@ -5,7 +5,7 @@ import styles from "../styles/admin.module.css";
 export function Admin() {
   return (
     <>
-      <Topbar />
+      <Topbar isAdmin={true} adminName="John Doe" />
       <Sidebar />
       <section className={styles.main}>
         <h1>Profile</h1>

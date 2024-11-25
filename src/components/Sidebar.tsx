@@ -9,7 +9,6 @@ export function Sidebar() {
       <a href="/overview">Overview</a>
       <a href="/market">Market</a>
       <a href="/rewards">Rewards</a>
-      <a href="/help">Help</a>
       <hr />
       <a href="logout">Logout</a>
     </aside>

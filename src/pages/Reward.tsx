@@ -1,11 +1,35 @@
 import styles from "../styles/reward.module.css";
 import { Topbar } from "../components/Topbar";
 import { Sidebar } from "../components/Sidebar";
+import { Doughnut } from "react-chartjs-2";
+import {
+  Chart as ChartJS,
+  CategoryScale,
+  ArcElement,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
+import { progress } from "../data/progress";
+
+ChartJS.register(
+  CategoryScale,
+  ArcElement,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+);
 
 export function Reward() {
   return (
     <>
-      <Topbar />
+      <Topbar isAdmin={false} />
       <Sidebar />
       <section className={styles.main}>
         <h1>Reward Section</h1>
@@ -25,8 +49,12 @@ export function Reward() {
             </div>
             <div>
               <h2>User Progress Tracker</h2>
+              {/* <nav className={styles.progress}>
+                <Doughnut data={progress} />
+              </nav> */}
               <p>
-                Earn 500 soon today <br />
+                Earn 500 soon today
+                <br />
                 Progress: 250/300 soon
               </p>
             </div>

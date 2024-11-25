@@ -153,7 +153,7 @@ export function Market() {
 
   return (
     <>
-      <Topbar />
+      <Topbar isAdmin={false} />
       <Sidebar />
       <section className={styles.main}>
         <span className={styles.span1}>

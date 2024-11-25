@@ -5,21 +5,24 @@ type ModalProps = {
 };
 
 export function SellModal({ onClose }: ModalProps) {
+  const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    // Close the modal only if the backdrop (outside of modalContainer) is clicked
+    if (e.target === e.currentTarget) {
+      onClose();
+    }
+  };
+
   return (
-    <div className={styles.modal}>
+    <div className={styles.modal} onClick={handleBackdropClick}>
       <div className={styles.modalContainer}>
         <span>
           <button onClick={onClose}>{"<"}</button>
-          <h2>Buy Energy</h2>
+          <h2>Sell Energy</h2>
         </span>
         <form action="">
           <ul>
             <li>
-              <label htmlFor="">Name (Autofilled)</label>
-              <input type="text" />
-            </li>
-            <li>
-              <label htmlFor="">Wallet Address (Autofilled)</label>
+              <label htmlFor="">Name</label>
               <input type="text" />
             </li>
             <li>
@@ -31,7 +34,7 @@ export function SellModal({ onClose }: ModalProps) {
               <input type="number" />
             </li>
             <li>
-              <label htmlFor="">Price per KWh ($) (Autofilled)</label>
+              <label htmlFor="">Price per KWh ($)</label>
               <input type="number" />
             </li>
             <li>
@@ -42,7 +45,7 @@ export function SellModal({ onClose }: ModalProps) {
           <span className={styles.check}>
             <input type="checkbox" />
             <label htmlFor="">
-              I confirm that the energy listed conforms with the platforms
+              I confirm that the energy listed conforms with the platform's
               standards and policies
             </label>
           </span>
