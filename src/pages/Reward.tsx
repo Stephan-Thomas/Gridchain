@@ -1,30 +1,30 @@
 import styles from "../styles/reward.module.css";
 import { Topbar } from "../components/Topbar";
 import { Sidebar } from "../components/Sidebar";
-import { Doughnut } from "react-chartjs-2";
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  ArcElement,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend,
-} from "chart.js";
-import { progress } from "../data/progress";
+// import { Doughnut } from "react-chartjs-2";
+// import {
+//   Chart as ChartJS,
+//   CategoryScale,
+//   ArcElement,
+//   LinearScale,
+//   PointElement,
+//   LineElement,
+//   Title,
+//   Tooltip,
+//   Legend,
+// } from "chart.js";
+// import { progress } from "../data/progress";
 
-ChartJS.register(
-  CategoryScale,
-  ArcElement,
-  LinearScale,
-  PointElement,
-  LineElement,
-  Title,
-  Tooltip,
-  Legend
-);
+// ChartJS.register(
+//   CategoryScale,
+//   ArcElement,
+//   LinearScale,
+//   PointElement,
+//   LineElement,
+//   Title,
+//   Tooltip,
+//   Legend
+// );
 
 export function Reward() {
   return (

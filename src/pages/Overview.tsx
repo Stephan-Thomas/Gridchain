@@ -13,7 +13,7 @@ import { Topbar } from "../components/Topbar";
 import { Sidebar } from "../components/Sidebar";
 import styles from "../styles/overview.module.css";
 import { chartData } from "../data/fakeData";
-import { BuyModal } from "../components/modals/buyModal";
+// import { BuyModal } from "../components/modals/buyModal";
 import { SellModal } from "../components/modals/sellModal";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom"; // Add this for navigation
